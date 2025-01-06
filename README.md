@@ -20,7 +20,6 @@ Dock's simple CLI means you can start building your PHP application without any 
 Supports PHP versions: `7.1` - `8.4`.
 
 ```shell
-dock install # Forwards arguments to the install service
 dock <arguments> # Forwards arguments to the php service
 dock test # Forwards arguments to a pre-configured test command
 dock composer # Forwards arguments to the composer service
@@ -32,6 +31,8 @@ To install this package run composer install:
 
 ```shell
 composer require zero-to-prod/dock --dev
+
+docker compose run --rm install
 ```
 
 ## Usage
