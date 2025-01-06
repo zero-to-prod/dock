@@ -1,0 +1,40 @@
+{
+  "name": "zero-to-prod/dock",
+  "description": "Docker files for running a basic PHP application.",
+  "license": "MIT",
+  "type": "library",
+  "keywords": ["zero-to-prod", "dock", "docker"],
+  "readme": "./README.md",
+  "time": "2025-01-06",
+  "authors": [
+    {
+      "name": "David Smith",
+      "email": "dave0016@gmail.com",
+      "homepage": "https://davidsmith.blog/",
+      "role": "maintainer"
+    }
+  ],
+  "homepage": "https://github.com/zero-to-prod/dock",
+  "support": {
+    "email": "dave0016@gmail.com",
+    "issues": "https://github.com/zero-to-prod/dock/issues",
+    "source": "https://github.com/zero-to-prod/dock",
+    "docs": "https://zero-to-prod.github.io/dock/",
+    "security": "https://github.com/zero-to-prod/dock/blob/main/SECURITY.md"
+  },
+  "funding": [
+    {
+      "type": "GitHub",
+      "url": "https://github.com/sponsors/zero-to-prod"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "bin": ["bin/dock"],
+  "autoload": {
+    "psr-4": {
+      "Zerotoprod\\Dock\\": "src/"
+    }
+  }
+}
