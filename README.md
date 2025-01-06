@@ -30,7 +30,7 @@ dock composer # Forwards arguments to the composer service
 To install this package run composer install:
 
 ```shell
-composer require zerotoprod/dock --dev
+composer require zero-to-prod/dock --dev
 ```
 
 ## Usage
