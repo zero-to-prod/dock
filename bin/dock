@@ -14,6 +14,10 @@ run_service() {
 }
 
 case "$1" in
+  install)
+    shift
+    run_service install "$@"
+    ;;
   test)
     shift
     run_service php vendor/bin/phpunit --configuration "${PHPUNIT_DIR:-tests/config}/${PHP_VERSION}/phpunit.xml" "$@"

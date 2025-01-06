@@ -20,7 +20,8 @@ Dock's simple CLI means you can start building your PHP application without any 
 Supports PHP versions: `7.1` - `8.4`.
 
 ```shell
-dock <arguments> # Forwards arguments to the php container
+dock install # Forwards arguments to the install service
+dock <arguments> # Forwards arguments to the php service
 dock test # Forwards arguments to a pre-configured test command
 dock composer # Forwards arguments to the composer service
 ```
