@@ -82,4 +82,14 @@ services:
       target: composer
     env_file:
       - .env
+
+  install:
+    image: composer:2
+    working_dir: /app
+    volumes:
+      - ./:/app:delegated
+      - ./.docker/vendor-cache/php${PHP_COMPOSER:-8.4}:/app/vendor
+    env_file:
+      - .env
+    command: ["composer", "install"]
 ```
