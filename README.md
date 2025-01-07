@@ -25,10 +25,8 @@ To install this package run composer install:
 
 ```shell
 composer require zero-to-prod/dock --dev
-```
-
-```shell
 ./vendor/bin/dock install
+dock composer update
 ```
 
 ## Usage
@@ -36,7 +34,7 @@ composer require zero-to-prod/dock --dev
 There a few commands that come with the default script.
 
 ```shell
-dock <arguments> # Forwards arguments to the php service
+dock <arguments> # Forwards arguments to a service
 dock test # Forwards arguments to a pre-configured test command
 dock composer # Forwards arguments to the composer service
 ```

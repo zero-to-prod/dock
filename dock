@@ -23,6 +23,6 @@ case "$1" in
     run_service composer composer "$@"
     ;;
   *)
-    run_service php "$@"
+    run_service "$@"
     ;;
 esac
