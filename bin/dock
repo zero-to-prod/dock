@@ -10,6 +10,7 @@ case "$1" in
 
     mkdir -p "$project_dir/docker"
     cp -R "$package_dir/runtimes/"* "$project_dir/docker"
+    cp -R "$package_dir/src/config"* "$project_dir/tests/config"
     cp "$package_dir/.env.example" "$project_dir/.env"
     cp "$package_dir/dock" "$project_dir/dock"
     cp "$package_dir/docker-compose.yml" "$project_dir/docker-compose.yaml"
