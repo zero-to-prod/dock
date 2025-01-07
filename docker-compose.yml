@@ -1,0 +1,43 @@
+services:
+  php:
+    volumes:
+      - ./:/app:delegated
+      - ./.docker/vendor-cache/php${PHP_VERSION:-8.4}:/app/vendor
+      - ./tests/config/${PHP_VERSION:-8.4}/phpunit.xml:/app/phpunit.xml
+    build:
+      context: ./docker/${PHP_VERSION:-8.4}
+      target: base
+    env_file:
+      - .env
+
+  debug:
+    volumes:
+      - ./:/app:delegated
+      - ./.docker/vendor-cache/php${PHP_DEBUG:-8.4}:/app/vendor
+      - ./tests/config/${PHP_VERSION:-8.4}/phpunit.xml:/app/phpunit.xml
+      - ./docker/${PHP_DEBUG:-8.4}/conf:/usr/local/etc/php
+    build:
+      context: ./docker/${PHP_DEBUG:-8.4}
+      target: debug
+    env_file:
+      - .env
+
+  composer:
+    volumes:
+      - ./:/app:delegated
+      - ./.docker/vendor-cache/php${PHP_COMPOSER:-8.4}:/app/vendor
+    build:
+      context: ./docker/${PHP_COMPOSER:-8.4}
+      target: composer
+    env_file:
+      - .env
+
+  install:
+    image: composer:2
+    working_dir: /app
+    volumes:
+      - ./:/app:delegated
+      - ./.docker/vendor-cache/php${PHP_COMPOSER:-8.4}:/app/vendor
+    env_file:
+      - .env
+    command: ["composer", "require", "zero-to-prod/dock", "--dev"]

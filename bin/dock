@@ -18,6 +18,17 @@ case "$1" in
     shift
     run_service php vendor/bin/phpunit --configuration "${PHPUNIT_DIR:-tests/config}/${PHP_VERSION}/phpunit.xml" "$@"
     ;;
+  install)
+    script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    package_dir="$(cd "$script_dir/.." && pwd)"
+    project_dir="$(pwd)"
+
+    mkdir -p "$project_dir/docker"
+    cp -R "$package_dir/runtimes/"* "$project_dir/docker"
+    cp "$package_dir/.env.example" "$project_dir/.env"
+    cp "$package_dir/bin/dock" "$project_dir/dock"
+    cp "$package_dir/docker-compose.yaml" "$project_dir/docker-compose.yaml"
+    ;;
   composer)
     shift
     run_service composer composer "$@"
