@@ -3,7 +3,6 @@
 set -e
 
 PHP_VERSION=$(grep "^PHP_VERSION=" .env | cut -d '=' -f2-)
-PHPUNIT_DIR=$(grep "^PHPUNIT_DIR=" .env | cut -d '=' -f2-)
 
 run_service() {
   local service=$1
@@ -16,7 +15,7 @@ run_service() {
 case "$1" in
   test)
     shift
-    run_service php vendor/bin/phpunit --configuration "${PHPUNIT_DIR:-tests/config}/${PHP_VERSION}/phpunit.xml" "$@"
+    run_service php vendor/bin/phpunit --configuration "docker/${PHP_VERSION}/phpunit.xml" "$@"
     ;;
   composer)
     shift
