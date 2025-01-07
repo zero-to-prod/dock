@@ -8,6 +8,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/zero-to-prod/dock)](https://github.com/zero-to-prod/dock)
 [![License](https://img.shields.io/packagist/l/zero-to-prod/dock?color=red)](https://github.com/zero-to-prod/dock/blob/main/LICENSE.md)
 [![Hits-of-Code](https://hitsofcode.com/github/zero-to-prod/dock?branch=main)](https://hitsofcode.com/github/zero-to-prod/dock/view?branch=main)
+[![wakatime](https://wakatime.com/badge/github/zero-to-prod/dock.svg)](https://wakatime.com/badge/github/zero-to-prod/dock)
 
 ## Introduction
 
