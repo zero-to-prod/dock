@@ -2,22 +2,7 @@
 
 set -e
 
-PHP_VERSION=$(grep "^PHP_VERSION=" .env | cut -d '=' -f2-)
-PHPUNIT_DIR=$(grep "^PHPUNIT_DIR=" .env | cut -d '=' -f2-)
-
-run_service() {
-  local service=$1
-  shift
-  if ! docker compose run --rm "$service" "$@"; then
-    exit 1
-  fi
-}
-
 case "$1" in
-  test)
-    shift
-    run_service php vendor/bin/phpunit --configuration "${PHPUNIT_DIR:-tests/config}/${PHP_VERSION}/phpunit.xml" "$@"
-    ;;
   install)
     script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
     package_dir="$(cd "$script_dir/.." && pwd)"
@@ -26,14 +11,7 @@ case "$1" in
     mkdir -p "$project_dir/docker"
     cp -R "$package_dir/runtimes/"* "$project_dir/docker"
     cp "$package_dir/.env.example" "$project_dir/.env"
-    cp "$package_dir/bin/dock" "$project_dir/dock"
+    cp "$package_dir/dock" "$project_dir/dock"
     cp "$package_dir/docker-compose.yaml" "$project_dir/docker-compose.yaml"
-    ;;
-  composer)
-    shift
-    run_service composer composer "$@"
-    ;;
-  *)
-    run_service php "$@"
     ;;
 esac
