@@ -37,7 +37,20 @@ This copies the relevant file into the project directory
 
 ## Usage
 
-### Install a Runtime
+### Building a Containers
+
+You can build the containers for the versions of php specified in your `.env` file.
+
+This will create the following containers:
+- php
+- debug
+- composer
+
+```shell
+sh dock build
+```
+
+### Install Dependencies for a Runtime
 
 This will update the composer dependencies set in the `.env` file of your project.
 
@@ -48,6 +61,7 @@ sh dock composer update
 There a few commands that come with the default script.
 
 ```shell
+sh dock build      # Builds the php, debug, and composer containers
 sh dock init       # Initialize the .env file from .env.example if it doesn't exist.
 sh dock test       # Run PHPUnit tests using the specified PHP version.
 sh dock composer   # Run Composer commands using the specified PHP version.

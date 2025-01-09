@@ -11,3 +11,13 @@ cp -R "$package_dir/runtimes/"* "$project_dir/docker"
 cp "$package_dir/.env.example" "$project_dir/.env"
 cp "$package_dir/dock" "$project_dir/dock"
 cp "$package_dir/docker-compose.yml" "$project_dir/docker-compose.yml"
+cp "$package_dir/test.sh" "$project_dir/test.sh"
+
+gitignore_file="$project_dir/.gitignore"
+if [ ! -f "$gitignore_file" ]; then
+    touch "$gitignore_file"
+fi
+
+if ! grep -qxF ".vendor/" "$gitignore_file"; then
+    echo ".vendor/" >> "$gitignore_file"
+fi

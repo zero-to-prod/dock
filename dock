@@ -55,6 +55,12 @@ case "$1" in
     shift
     run_service "php${PHP_VERSION}" vendor/bin/phpunit --configuration "docker/${PHP_VERSION}/phpunit.xml" "$@"
   ;;
+  build)
+    shift
+    docker compose build "php${PHP_VERSION}" "$@"
+    docker compose build "debug${PHP_VERSION}" "$@"
+    docker compose build "composer${PHP_VERSION}" "$@"
+  ;;
   composer)
     shift
     run_service "composer${PHP_VERSION}" composer "$@"
