@@ -19,6 +19,6 @@ if [ ! -f "$gitignore_file" ]; then
 fi
 
 {
-    grep -qxF '\n.vendor/' "$gitignore_file" || echo '.vendor/' >> "$gitignore_file"
+    grep -qxF '.vendor/' "$gitignore_file" || echo -e '\n.vendor/' >> "$gitignore_file"
     grep -qxF '.env' "$gitignore_file" || echo '.env' >> "$gitignore_file"
 }
