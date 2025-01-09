@@ -15,11 +15,11 @@ run_service() {
 case "$1" in
   test)
     shift
-    run_service php vendor/bin/phpunit --configuration "docker/${PHP_VERSION}/phpunit.xml" "$@"
+    run_service "php${PHP_VERSION}" vendor/bin/phpunit --configuration "docker/${PHP_VERSION}/phpunit.xml" "$@"
     ;;
   composer)
     shift
-    run_service composer composer "$@"
+    run_service "composer${PHP_VERSION}" composer "$@"
     ;;
   *)
     run_service "$@"
