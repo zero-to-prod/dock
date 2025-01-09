@@ -18,6 +18,4 @@ if [ ! -f "$gitignore_file" ]; then
     touch "$gitignore_file"
 fi
 
-if ! grep -qxF ".vendor/" "$gitignore_file"; then
-    echo ".vendor/" >> "$gitignore_file"
-fi
+echo ".vendor/" >> "$gitignore_file"
