@@ -18,4 +18,4 @@ if [ ! -f "$gitignore_file" ]; then
     touch "$gitignore_file"
 fi
 
-echo ".vendor/" >> "$gitignore_file"
+echo -e "\n.vendor/" >> "$gitignore_file"
