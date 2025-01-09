@@ -26,7 +26,7 @@ To install this package run composer install:
 
 ```shell
 composer require zero-to-prod/dock --dev
-./vendor/bin/dock install
+./vendor/bin/dock
 dock composer update
 ```
 
@@ -35,7 +35,7 @@ dock composer update
 There a few commands that come with the default script.
 
 ```shell
-dock <arguments> # Forwards arguments to a service
+dock <service> # Forwards arguments to a service
 dock test # Forwards arguments to a pre-configured test command
 dock composer # Forwards arguments to the composer service
 ```
