@@ -26,16 +26,30 @@ To install this package run composer install:
 
 ```shell
 composer require zero-to-prod/dock --dev
+```
+
+## Initialization
+This copies the relevant file into the project directory
+
+```shell
 ./vendor/bin/dock
-dock composer update
 ```
 
 ## Usage
 
+### Install a Runtime
+
+This will update the composer dependencies set in the `.env` file of your project.
+
+```shell
+sh dock composer update
+```
+
 There a few commands that come with the default script.
 
 ```shell
-dock <service> # Forwards arguments to a service
-dock test # Forwards arguments to a pre-configured test command
-dock composer # Forwards arguments to the composer service
+sh dock init       # Initialize the .env file from .env.example if it doesn't exist.
+sh dock test       # Run PHPUnit tests using the specified PHP version.
+sh dock composer   # Run Composer commands using the specified PHP version.
+sh dock <service>  # Run a specified Docker service with optional arguments.
 ```
