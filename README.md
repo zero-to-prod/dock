@@ -10,6 +10,11 @@
 [![Hits-of-Code](https://hitsofcode.com/github/zero-to-prod/dock?branch=main)](https://hitsofcode.com/github/zero-to-prod/dock/view?branch=main)
 [![wakatime](https://wakatime.com/badge/github/zero-to-prod/dock.svg)](https://wakatime.com/badge/github/zero-to-prod/dock)
 
+## Contents
+
+- [Introduction](#introduction)
+- [Supported Php Versions](#)
+
 ## Introduction
 
 Dock provides a Docker powered local development experience for a PHP application.
@@ -17,15 +22,24 @@ Other than Docker, no software or libraries are required to be installed on your
 Dock's simple CLI means you can start building your PHP application without any previous Docker experience.
 
 **Why you’ll love it**:
-> - **Simplify Multiple PHP Version Testing** with a single command
-> - **Simple Version Switching** with a single value in your `.env`
-> - **Full Docker Support** with a simple docker-compose file.
+> - **Multiple PHP Version Testing** from a single script.
+> - **Switch PHP Versions** with a value in your `.env`
+> - **Full Docker Support** from a docker-compose file.
 > - **PHP Debugging** with all supported PHP versions.
-> - **Pull it in with Composer** and run the installation script.
+> - **Available with Composer**.
 
-## Support
+## Supported Php Versions
 
-Supports PHP versions: `7.1` - `8.4`.
+Supports PHP versions:
+
+- 7.1
+- 7.2
+- 7.3
+- 7.4
+- 8.0
+- 8.1
+- 8.2
+- 8.3
 
 ## Installation
 
@@ -36,6 +50,7 @@ composer require zero-to-prod/dock --dev
 ```
 
 ## Initialization
+
 This copies the relevant file into the project directory
 
 ```shell
@@ -49,6 +64,7 @@ This copies the relevant file into the project directory
 You can build the containers for the versions of php specified in your `.env` file.
 
 This will create the following containers:
+
 - php
 - debug
 - composer
