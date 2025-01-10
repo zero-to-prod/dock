@@ -13,7 +13,15 @@
 ## Contents
 
 - [Introduction](#introduction)
-- [Supported Php Versions](#)
+- [Supported Php Versions](#supported-php-versions)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Initialization](#initialization)
+- [Usage](#usage)
+    - [Configuration](#configuration)
+    - [Building Containers](#building-containers)
+    - [Install Dependencies for a Runtime](#install-dependencies-for-a-runtime)
+    - [Commands](#commands)
 
 ## Introduction
 
@@ -22,15 +30,15 @@ Other than Docker, no software or libraries are required to be installed on your
 Dock's simple CLI means you can start building your PHP application without any previous Docker experience.
 
 **Why you’ll love it**:
-> - **Multiple PHP Version Testing** from a single script.
-> - **Switch PHP Versions** with a value in your `.env`
-> - **Full Docker Support** from a docker-compose file.
-> - **PHP Debugging** with all supported PHP versions.
+> - **Test Multiple PHP Versions** with one script.
+> - **Switch Versions Easily** via `.env` settings.
+> - **Comprehensive Docker Support** through docker-compose.
+> - **PHP Debugging** already setup across all supported versions.
 > - **Available with Composer**.
 
-## Supported Php Versions
+## Supported PHP Versions
 
-Supports PHP versions:
+Compatible with PHP:
 
 - 7.1
 - 7.2
@@ -41,9 +49,13 @@ Supports PHP versions:
 - 8.2
 - 8.3
 
+## Prerequisites
+
+- Docker installed and running
+
 ## Installation
 
-To install this package run composer install:
+Add `dock` to your project with Composer:
 
 ```shell
 composer require zero-to-prod/dock --dev
@@ -51,35 +63,53 @@ composer require zero-to-prod/dock --dev
 
 ## Initialization
 
-This copies the relevant file into the project directory
+Once you have the composer package installed, you can set up Dock in your project directory:
 
 ```shell
 ./vendor/bin/dock
 ```
 
+This copies necessary configuration files to your project.
+
 ## Usage
 
-### Building a Containers
+Dock includes scripts to build and manage your PHP environments effortlessly.
 
-You can build the containers for the versions of php specified in your `.env` file.
+### Configuration
 
-This will create the following containers:
+Before starting development, verify that your `.env` file contains the correct settings.
 
-- php
-- debug
-- composer
+You can specify which PHP version to use for local development, debugging, and Composer operations by updating these variables in your `.env` file:
+
+```dotenv
+PHP_VERSION=7.1
+PHP_DEBUG=7.1
+PHP_COMPOSER=7.1
+```
+
+### Building Containers
+
+Build Docker containers based on your `.env` PHP versions:
 
 ```shell
 sh dock build
 ```
 
+This will create the following containers:
+
+- php<PHP_VERSION> (example service: `php7.1`)
+- debug<PHP_VERSION> (example service: `debug7.1`)
+- composer<PHP_VERSION> (example service: `composer7.1`)
+
 ### Install Dependencies for a Runtime
 
-This will update the composer dependencies set in the `.env` file of your project.
+Update Composer dependencies as defined in your `.env`:
 
 ```shell
 sh dock composer update
 ```
+
+### Commands
 
 There a few commands that come with the default script.
 
