@@ -16,6 +16,13 @@ Dock provides a Docker powered local development experience for a PHP applicatio
 Other than Docker, no software or libraries are required to be installed on your local computer before using Dock.
 Dock's simple CLI means you can start building your PHP application without any previous Docker experience.
 
+**Why you’ll love it**:
+> - **Simplify Multiple PHP Version Testing** with a single command
+> - **Simple Version Switching** with a single value in your `.env`
+> - **Full Docker Support** with a simple docker-compose file.
+> - **PHP Debugging** with all supported PHP versions.
+> - **Pull it in with Composer** and run the installation script.
+
 ## Support
 
 Supports PHP versions: `7.1` - `8.4`.
