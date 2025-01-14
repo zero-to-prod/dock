@@ -3,8 +3,7 @@
   "description": "Docker files for running a basic PHP application.",
   "license": "MIT",
   "type": "library",
-  "keywords": ["zero-to-prod",
-    "src/dock", "docker"],
+  "keywords": ["zero-to-prod", "dock", "docker"],
   "readme": "./README.md",
   "time": "2025-01-06",
   "authors": [
