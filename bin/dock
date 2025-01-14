@@ -8,17 +8,24 @@ project_dir="$(pwd)"
 
 mkdir -p "$project_dir/docker"
 cp -R "$package_dir/runtimes/"* "$project_dir/docker"
-cp "$package_dir/.env.example" "$project_dir/.env"
-cp "$package_dir/dock" "$project_dir/dock"
-cp "$package_dir/docker-compose.yml" "$project_dir/docker-compose.yml"
-cp "$package_dir/test.sh" "$project_dir/test.sh"
+cp "$package_dir/src/.env.example" "$project_dir/.env"
+cp "$package_dir/src/LOCAL_DEVELOPMENT.md" "$project_dir/LOCAL_DEVELOPMENT.md"
+cp "$package_dir/src/docker-compose.yml" "$project_dir/docker-compose.yml"
+cp "$package_dir/src/test.sh" "$project_dir/test.sh"
+cp "$package_dir/src/dock" "$project_dir/dock"
 
 gitignore_file="$project_dir/.gitignore"
 if [ ! -f "$gitignore_file" ]; then
     touch "$gitignore_file"
 fi
 
+gitattributes="$project_dir/.gitattributes"
+if [ ! -f "$gitattributes" ]; then
+    touch "$gitattributes"
+fi
+
 {
-    grep -qxF '.vendor/' "$gitignore_file" || echo -e '\n.vendor/' >> "$gitignore_file"
-    grep -qxF '.env' "$gitignore_file" || echo '.env' >> "$gitignore_file"
+    grep -qxF '.vendor/' "$gitignore_file" || echo -e '/.vendor/' >> "$gitignore_file"
+    grep -qxF '.env' "$gitignore_file" || echo '/.env' >> "$gitignore_file"
+    grep -qxF '.env' "$gitattributes" || echo '/LOCAL_DEVELOPMENT.md     export-ignore' >> "$gitattributes"
 }
