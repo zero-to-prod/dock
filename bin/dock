@@ -26,11 +26,11 @@ if [ ! -f "$gitattributes" ]; then
 fi
 
 {
-    grep -qxF '.vendor/' "$gitignore_file" || echo -e '/.vendor/' >> "$gitignore_file"
-    grep -qxF '.env' "$gitignore_file" || echo '/.env' >> "$gitignore_file"
-    grep -qxF '.gitattributes' "$gitattributes" || echo '/LOCAL_DEVELOPMENT.md     export-ignore' >> "$gitattributes"
-    grep -qxF '.gitattributes' "$gitattributes" || echo '/docker/                  export-ignore' >> "$gitattributes"
-    grep -qxF '.gitattributes' "$gitattributes" || echo '/docker-compose.yml       export-ignore' >> "$gitattributes"
-    grep -qxF '.gitattributes' "$gitattributes" || echo '/dock                     export-ignore' >> "$gitattributes"
-    grep -qxF '.gitattributes' "$gitattributes" || echo '/test.sh                  export-ignore' >> "$gitattributes"
+    echo '/.vendor/' >> "$gitignore_file"
+    echo '/.env' >> "$gitignore_file"
+    echo '/LOCAL_DEVELOPMENT.md     export-ignore' >> "$gitattributes"
+    echo '/docker/                  export-ignore' >> "$gitattributes"
+    echo '/docker-compose.yml       export-ignore' >> "$gitattributes"
+    echo '/dock                     export-ignore' >> "$gitattributes"
+    echo '/test.sh                  export-ignore' >> "$gitattributes"
 }
