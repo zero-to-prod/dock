@@ -9,6 +9,7 @@ project_dir="$(pwd)"
 mkdir -p "$project_dir/docker"
 cp -R "$package_dir/runtimes/"* "$project_dir/docker"
 cp "$package_dir/src/.env.example" "$project_dir/.env"
+cp "$package_dir/src/.env.example" "$project_dir/.env.example"
 cp "$package_dir/src/LOCAL_DEVELOPMENT.md" "$project_dir/LOCAL_DEVELOPMENT.md"
 cp "$package_dir/src/docker-compose.yml" "$project_dir/docker-compose.yml"
 cp "$package_dir/src/test.sh" "$project_dir/test.sh"
@@ -27,5 +28,9 @@ fi
 {
     grep -qxF '.vendor/' "$gitignore_file" || echo -e '/.vendor/' >> "$gitignore_file"
     grep -qxF '.env' "$gitignore_file" || echo '/.env' >> "$gitignore_file"
-    grep -qxF '.env' "$gitattributes" || echo '/LOCAL_DEVELOPMENT.md     export-ignore' >> "$gitattributes"
+    grep -qxF '.gitattributes' "$gitattributes" || echo '/LOCAL_DEVELOPMENT.md     export-ignore' >> "$gitattributes"
+    grep -qxF '.gitattributes' "$gitattributes" || echo '/docker/                  export-ignore' >> "$gitattributes"
+    grep -qxF '.gitattributes' "$gitattributes" || echo '/docker-compose.yml       export-ignore' >> "$gitattributes"
+    grep -qxF '.gitattributes' "$gitattributes" || echo '/dock                     export-ignore' >> "$gitattributes"
+    grep -qxF '.gitattributes' "$gitattributes" || echo '/test.sh                  export-ignore' >> "$gitattributes"
 }
