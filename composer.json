@@ -3,7 +3,11 @@
   "description": "Docker files for running a basic PHP application.",
   "license": "MIT",
   "type": "library",
-  "keywords": ["zero-to-prod", "dock", "docker"],
+  "keywords": [
+    "zero-to-prod",
+    "dock",
+    "docker"
+  ],
   "readme": "./README.md",
   "time": "2025-01-06",
   "authors": [
@@ -29,9 +33,12 @@
     }
   ],
   "require": {
-    "php": ">=7.1"
+    "php": ">=7.1",
+    "zero-to-prod/package-helper": "^1.1.3"
   },
-  "bin": ["bin/dock"],
+  "bin": [
+    "bin/dock"
+  ],
   "autoload": {
     "psr-4": {
       "Zerotoprod\\Dock\\": "src/"
