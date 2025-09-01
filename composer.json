@@ -5,8 +5,7 @@
   "type": "library",
   "keywords": [
     "zero-to-prod",
-    "dock",
-    "docker"
+    "dock"
   ],
   "readme": "./README.md",
   "time": "2025-01-06",
