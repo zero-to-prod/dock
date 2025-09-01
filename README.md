@@ -16,6 +16,8 @@
 - [Supported Php Versions](#supported-php-versions)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Documentation Publishing](#documentation-publishing)
+    - [Automatic Documentation Publishing](#automatic-documentation-publishing)
 - [Initialization](#initialization)
 - [Usage](#usage)
     - [Configuration](#configuration)
@@ -48,6 +50,8 @@ Compatible with PHP:
 - 8.1
 - 8.2
 - 8.3
+- 8.4
+- 8.5
 
 ## Prerequisites
 
@@ -59,6 +63,39 @@ Add `dock` to your project with Composer:
 
 ```shell
 composer require zero-to-prod/dock --dev
+```
+
+## Documentation Publishing
+
+You can publish this README to your local documentation directory.
+
+This can be useful for providing documentation for AI agents.
+
+This can be done using the included script:
+
+```bash
+# Publish to default location (./docs/zero-to-prod/dock)
+vendor/bin/zero-to-prod-dock
+
+# Publish to custom directory
+vendor/bin/zero-to-prod-dock /path/to/your/docs
+```
+
+### Automatic Documentation Publishing
+
+You can automatically publish documentation by adding the following to your `composer.json`:
+
+```json
+{
+    "scripts": {
+        "post-install-cmd": [
+            "zero-to-prod-dock"
+        ],
+        "post-update-cmd": [
+            "zero-to-prod-dock"
+        ]
+    }
+}
 ```
 
 ## Initialization

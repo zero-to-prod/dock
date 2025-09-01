@@ -5,8 +5,7 @@
   "type": "library",
   "keywords": [
     "zero-to-prod",
-    "dock",
-    "docker"
+    "dock"
   ],
   "readme": "./README.md",
   "time": "2025-01-06",
@@ -37,7 +36,8 @@
     "zero-to-prod/package-helper": "^1.1.3"
   },
   "bin": [
-    "bin/dock"
+    "bin/dock",
+    "bin/zero-to-prod-dock"
   ],
   "autoload": {
     "psr-4": {
