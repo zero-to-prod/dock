@@ -1,4 +1,4 @@
-FROM php:8.5-rc-alpine AS builder
+FROM php:8.5-alpine AS builder
 
 RUN apk add --no-cache \
     git \
@@ -26,7 +26,7 @@ RUN apk add --no-cache --virtual .build-deps \
   && apk del .build-deps \
   && rm -rf /tmp/* /var/cache/apk/*
 
-FROM php:8.5-rc-alpine AS base
+FROM php:8.5-alpine AS base
 
 WORKDIR /app
 
